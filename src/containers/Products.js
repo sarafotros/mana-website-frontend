@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
+import Product from '../components/Product'
 
 class Products extends Component {
     state = {  }
+
+    mapProducts = () => {
+        return this.props.products.map(product => <Product product={product}/>)
+    }
+
     render() { 
+
         return (
-            <div>Products</div>
-          );
+        <div>{this.mapProducts()}</div>
+        )
     }
 }
  
