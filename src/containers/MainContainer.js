@@ -1,10 +1,6 @@
 import React from 'react';
 import User from '../components/User'
 
-
-
-import ServicesPhoto from '../public/mainContainer/services.png'
-
 const MainContainer = ({ users }) => {
 
     const renderUsers = () => {
