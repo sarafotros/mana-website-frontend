@@ -19,7 +19,11 @@ class Welcome extends React.Component {
         console.log(this.state.users)
 		return (
 			<div>
+				{/* <Header /> */}
+				{/* <Banner /> */}
                 <MainContainer users={this.state.users}/>
+				{/* <Instagram /> */}
+				{/* <Footer /> */}
 			</div>
 		);
 	}
