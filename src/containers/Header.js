@@ -6,8 +6,8 @@ class Header extends Component {
     render() { 
         return ( 
             <div>
-            <img src="images/header/logoMana.png" id="logo"/>
-
+            <a href="/"><img src="images/header/logoMana.png" id="logo"/></a>
+                <a href="/products" >Products</a> | <a href="/services">Services</a>  |  <a href="#">Find us</a> | 
                 <a href="#">Login</a> | <a href="#">SignUp</a>  |  <a href="#">Cart</a>
             </div>
          );

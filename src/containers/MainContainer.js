@@ -1,7 +1,10 @@
 import React from 'react';
+import { Route } from 'react-router-dom'
+
 import User from '../components/User';
 import Products from './Products'; 
 import Services from './Services';
+
 
 const MainContainer = ({ users, products, services }) => {
 
@@ -13,8 +16,9 @@ const MainContainer = ({ users, products, services }) => {
         <div>
             {renderUsers()}
             <a href="#"><img src="images/mainContainer/services.png"/></a>
-            <Products products={products}/>
-            <Services services={services}/>
+            <Route path="/products" component={() => <Products products={products}/>} />
+            <Route path="/services" component={() => <Services services={services}/>} />
+          
         </div>
     )
 
