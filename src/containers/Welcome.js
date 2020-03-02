@@ -1,7 +1,10 @@
 import React from 'react';
 import API from '../API';
 import MainContainer from './MainContainer';
+
 import Header from './Header'
+import Footer from '../components/Footer';
+
 
 class Welcome extends React.Component {
 	state = {
@@ -17,14 +20,14 @@ class Welcome extends React.Component {
 	}
 
     render() {
-        console.log(this.state.users)
+        
 		return (
 			<div>
 				<Header />
 				{/* <Banner /> */}
                 <MainContainer users={this.state.users}/>
 				{/* <Instagram /> */}
-				{/* <Footer /> */}
+				<Footer />
 			</div>
 		);
 	}
