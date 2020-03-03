@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Service from '../components/Service'
+import ServiceShow from '../components/ServiceShow'
 
 class ServiceContainer extends Component {
     state = { 
@@ -7,7 +7,7 @@ class ServiceContainer extends Component {
      }
 
      componentDidMount(){
-         fetch(`http://localhost:3000/products/${this.props.match.params.id}`)
+         fetch(`http://localhost:3000/services/${this.props.match.params.id}`)
          .then(response => response.json())
          .then(service => this.setState({service}))
      }
@@ -15,7 +15,7 @@ class ServiceContainer extends Component {
  
         render() { 
             return  this.state.service? 
-            <Service service={this.state.service} />
+            <ServiceShow service={this.state.service} />
             : 
             <h1>Loading...</h1>
         }
