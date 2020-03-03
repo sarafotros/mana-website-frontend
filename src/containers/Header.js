@@ -12,9 +12,11 @@ class Header extends Component {
 					alt="logo"
 				/>
 			</Link>
-			<Link to="/products">Products</Link> |{' '}
-			<Link to="/services">Services</Link> | <Link to="#">Find us</Link> |
-			<Link to="/login">Login</Link> | <Link to="/signup">SignUp</Link> |{' '}
+			<Link to="/products"> Products </Link> |{' '}
+			<Link to="/services"> Services </Link> | <Link to="#"> Find us</Link> |
+			{this.props.email ? <Link to="/login"> Profile </Link> : <Link to="/login"> Login </Link>}
+			
+			| <Link to="/signup"> SignUp </Link> |{' '}
 			<Link to="#">Cart</Link>
 		</div>
 	  );

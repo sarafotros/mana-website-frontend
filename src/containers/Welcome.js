@@ -19,8 +19,17 @@ class Welcome extends React.Component {
 	state = {
 		users: [],
 		products: [],
-		services: []
+		services: [],
+		email: null,
+		user: null
 	};
+
+	logIn =  (user) => {
+		this.setState({
+			email: user.email,
+			user: user
+		})
+	} 
 
 	getUsers = () => {
 		API.getUsers().then(users => this.setState({ users }));
@@ -43,16 +52,16 @@ class Welcome extends React.Component {
 
 
     render() {
-		const {users,products,services} = this.state
+		const { users ,products,services } = this.state
 		return (
 			<div>
-				<Header />
-
+				<Header email={this.state.email} />
+				{this.state.email && <h2> Welcome {this.state.user.name}</h2> }
 				<Route exact path="/" component={() => <MainContainer /> }/>
 				<Route exact path="/products" component={() => <Products products={products}/>} />
 				<Route exact path="/services" component={() => <Services services={services}/>} />
 
-				<Route exact path="/login" component={Login} />
+				<Route exact path="/login" component={() => <Login logIn={this.logIn}/>} />
 				<Route exact path="/signup" component={SignUp} />
 
 				<Route exact path="/services/:id" component={ServiceContainer}></Route>
