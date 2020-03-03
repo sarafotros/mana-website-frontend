@@ -5,7 +5,7 @@ class Services extends Component {
     state = {  }
 
     mapServices = () => {
-        return this.props.services.map(service => <Service service={service} />)
+        return this.props.services.map(service => <Service service={service} key={service.id} />)
     }
 
     render() { 

@@ -13,6 +13,8 @@ import ProductContainer from './ProductContainer';
 import Login from '../components/Login';
 import SignUp from '../components/SignUp';
 
+import Cart from '../components/Cart'
+
 
 
 class Welcome extends React.Component {
@@ -51,10 +53,9 @@ class Welcome extends React.Component {
 				<Route exact path="/" component={() => <MainContainer /> }/>
 				<Route exact path="/products" component={() => <Products products={products}/>} />
 				<Route exact path="/services" component={() => <Services services={services}/>} />
-
 				<Route exact path="/login" component={Login} />
 				<Route exact path="/signup" component={SignUp} />
-
+        <Route exact path="/cart" component={Cart} />
 				<Route exact path="/services/:id" component={ServiceContainer}></Route>
 				<Route exact path="/products/:id" component={ProductContainer}></Route>
 				{/* <Instagram /> */}
