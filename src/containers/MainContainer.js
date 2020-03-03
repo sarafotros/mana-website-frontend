@@ -25,8 +25,9 @@ const MainContainer = ({ users, products, services }) => {
             </Link>
 
             <Link to="/services">
-                <img src="images/mainContainer/services.png" alt="logo" />
-            </Link>
+            <img src="https://res.cloudinary.com/ddxhjhvdj/image/upload/c_scale,w_500/v1583247534/service_f5aemg.jpg"
+                        alt="logo"
+                    />            </Link>
         </div>
     );
 

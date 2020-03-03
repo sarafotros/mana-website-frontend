@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import Products from './Products'; 
 import Services from './Services';
 import ServiceContainer from './ServiceContainer'
+import ProductContainer from './ProductContainer'
 
 
 
@@ -48,6 +49,7 @@ class Welcome extends React.Component {
 					<Route exact path="/products" component={() => <Products products={products}/>} />
             		<Route exact path="/services" component={() => <Services services={services}/>} />
 					<Route exact path="/services/:id" component={ServiceContainer}></Route>
+					<Route exact path="/products/:id" component={ProductContainer}></Route>
 					{/* <Instagram /> */}
 					<Footer />
 			</div>

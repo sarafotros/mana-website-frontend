@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Product from '../components/Product';
+import ProductShow from '../components/ProductShow';
 
 
 class ProductContainer extends Component {
@@ -9,7 +9,7 @@ class ProductContainer extends Component {
     
 
     componentDidMount() {
-        fetch(`http://localhost:3000/services/${this.props.match.params.id}`)
+        fetch(`http://localhost:3000/products/${this.props.match.params.id}`)
             .then(response => response.json())
             .then(product => this.setState({ product})) 
     }
@@ -18,7 +18,7 @@ class ProductContainer extends Component {
 
     render() { 
         return this.state.product ? 
-            <Product product={this.state.product} />
+            <ProductShow product={this.state.product} />
             :
             <h1>Loading...</h1>
          
