@@ -16,13 +16,19 @@ const MainContainer = ({ users, products, services }) => {
     return (
         <div>
             {/* <Banner /> */}
-            <p>Products.......................................................
-                ...................................................Services</p>
-            <Link to="/products"><img src="images/mainContainer/services.png"/></Link>
-         
-            <Link to="/Services"><img src="images/mainContainer/services.png"/></Link>
+            <p>
+                Products....................................................
+                ...................................................Services
+            </p>
+            <Link to="/products">
+                <img src="images/mainContainer/services.png" alt="logo" />
+            </Link>
+
+            <Link to="/services">
+                <img src="images/mainContainer/services.png" alt="logo" />
+            </Link>
         </div>
-    )
+    );
 
 }
  

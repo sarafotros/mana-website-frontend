@@ -9,9 +9,7 @@ class Products extends Component {
     }
 
     render() { 
-        console.log("YEAH")
-
-        return (
+     return (
         <div>{this.mapProducts()}</div>
         )
     }
