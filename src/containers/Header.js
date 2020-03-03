@@ -13,9 +13,9 @@ class Header extends Component {
 							/>
 						</Link>
 						<Link to="/products">Products</Link> |{' '}
-						<Link to="/services">Services</Link> | <Link to="#">Find us</Link> |
+						<Link to="/services">Services</Link> | 
 						<Link to="/login">Login</Link> | <Link to="#">SignUp</Link> |{' '}
-						<Link to="#">Cart</Link>
+						<Link to="/cart">Cart</Link>
 					</div>
 				);
     }
