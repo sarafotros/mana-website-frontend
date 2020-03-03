@@ -16,9 +16,6 @@ const MainContainer = ({ users, products, services }) => {
         <div>
             {renderUsers()}
             <a href="#"><img src="images/mainContainer/services.png"/></a>
-            <Route path="/products" component={() => <Products products={products}/>} />
-            <Route path="/services" component={() => <Services services={services}/>} />
-          
         </div>
     )
 

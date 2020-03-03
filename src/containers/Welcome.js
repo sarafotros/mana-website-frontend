@@ -1,9 +1,12 @@
 import React from 'react';
 import API from '../API';
 import MainContainer from './MainContainer';
+import { Route } from 'react-router-dom'
 
 import Header from './Header'
 import Footer from '../components/Footer';
+import Products from './Products'; 
+import Services from './Services';
 
 
 class Welcome extends React.Component {
@@ -38,11 +41,14 @@ class Welcome extends React.Component {
 		console.log(products)
 		return (
 			<div>
-				<Header />
-				{/* <Banner /> */}
-                <MainContainer users={users} products={products} services={services}/>
-				{/* <Instagram /> */}
-				<Footer />
+					<Header />
+					{/* <Banner /> */}
+					<Route exact path="/" component={() => <MainContainer users={users}/> }/>
+					{/* <Instagram /> */}
+					<Route path="/products" component={() => <Products products={products}/>} />
+            		<Route path="/services" component={() => <Services services={services}/>} />
+
+					<Footer />
 			</div>
 		);
 	}
