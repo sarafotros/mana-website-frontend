@@ -45,7 +45,7 @@ class Welcome extends React.Component {
 			<div>
 					<Header />
 	
-					<Route exact path="/" component={() => <MainContainer users={users}/> }/>
+					<Route exact path="/" component={() => <MainContainer /> }/>
 					<Route exact path="/products" component={() => <Products products={products}/>} />
             		<Route exact path="/services" component={() => <Services services={services}/>} />
 					<Route exact path="/services/:id" component={ServiceContainer}></Route>
