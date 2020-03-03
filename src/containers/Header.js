@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 class Header extends Component {
     state = {  }
     render() { 
         return ( 
             <div>
-            <a href="/"><img src="images/header/logoMana.png" id="logo"/></a>
-                <a href="/products" >Products</a> | <a href="/services">Services</a>  |  <a href="#">Find us</a> | 
-                <a href="#">Login</a> | <a href="#">SignUp</a>  |  <a href="#">Cart</a>
+            <Link to="/"><img src="images/header/logoMana.png" id="logo"/></Link>
+                <Link to="/products" >Products</Link> | <Link to="/services">Services</Link>  |  <Link to="#">Find us</Link> | 
+                <Link to="#">Login</Link> | <Link to="#">SignUp</Link>  |  <Link to="#">Cart</Link>
             </div>
          );
     }

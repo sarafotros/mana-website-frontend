@@ -7,6 +7,7 @@ import Header from './Header'
 import Footer from '../components/Footer';
 import Products from './Products'; 
 import Services from './Services';
+import ServiceContainer from './ServiceContainer'
 
 
 class Welcome extends React.Component {
@@ -38,16 +39,15 @@ class Welcome extends React.Component {
 
     render() {
 		const {users,products,services} = this.state
-		console.log(products)
 		return (
 			<div>
 					<Header />
-					{/* <Banner /> */}
+	
 					<Route exact path="/" component={() => <MainContainer users={users}/> }/>
+					<Route exact path="/products" component={() => <Products products={products}/>} />
+            		<Route exact path="/services" component={() => <Services services={services}/>} />
+					<Route exact path="/services/:id" component={ServiceContainer}></Route>
 					{/* <Instagram /> */}
-					<Route path="/products" component={() => <Products products={products}/>} />
-            		<Route path="/services" component={() => <Services services={services}/>} />
-
 					<Footer />
 			</div>
 		);
