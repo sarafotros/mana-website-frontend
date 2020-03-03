@@ -7,8 +7,10 @@ import Header from './Header'
 import Footer from '../components/Footer';
 import Products from './Products'; 
 import Services from './Services';
-import ServiceContainer from './ServiceContainer'
-import ProductContainer from './ProductContainer'
+import ServiceContainer from './ServiceContainer';
+import ProductContainer from './ProductContainer';
+
+import Login from '../components/Login';
 
 
 
@@ -48,6 +50,9 @@ class Welcome extends React.Component {
 					<Route exact path="/" component={() => <MainContainer /> }/>
 					<Route exact path="/products" component={() => <Products products={products}/>} />
             		<Route exact path="/services" component={() => <Services services={services}/>} />
+
+					<Route exact path="/login" component={Login} />
+
 					<Route exact path="/services/:id" component={ServiceContainer}></Route>
 					<Route exact path="/products/:id" component={ProductContainer}></Route>
 					{/* <Instagram /> */}
