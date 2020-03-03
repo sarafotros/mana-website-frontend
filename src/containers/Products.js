@@ -9,7 +9,9 @@ class Products extends Component {
     }
 
     render() { 
-        return (
+
+     return (
+
         <div>{this.mapProducts()}</div>
         )
     }
