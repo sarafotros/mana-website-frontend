@@ -26,7 +26,7 @@ class Login extends Component {
 
         fetch('http://localhost:3000/login', configurationObject)
 					.then(response => response.json())
-					.then(json => this.props.logIn(json.user));
+					.then(json => this.props.logIn(json.user, json.token));
       }
     
 
