@@ -6,7 +6,7 @@ class Header extends React.Component {
 	state = {  }
 	
 	logedIn = () => {
-		return this.props.email ? <Link to="/login"> Profile </Link> : <Fragment><Link to="/login"> Login </Link>  |  <Link to="/signup"> SignUp </Link> </Fragment>
+		return this.props.email ? <Fragment> <Link onClick={this.props.logOut} to="/">Log Out</Link> </Fragment> : <Fragment><Link to="/login"> Login </Link>  |  <Link to="/signup"> SignUp </Link> </Fragment>
 	}
     render() { 
 	return (

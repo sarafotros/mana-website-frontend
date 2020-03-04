@@ -5,6 +5,7 @@ const productUrl = baseUrl + '/products'
 const serviceUrl = baseUrl + '/services'
 const loginUrl = baseUrl + '/login'
 const validateURL = baseUrl + '/validate'
+const signupURL = baseUrl + '/create'
 
 const get = (url) => (
      fetch(url).then(resp => resp.json())
@@ -41,7 +42,11 @@ const validate = (token) => {
     return getToken(validateURL,token)
 }
 
+const signup = (body) => {
+    post(signupURL,body).then(resp => resp.json())
+}
 
-export default { getUsers,getProducts,getServices, logingFetch, validate }
+
+export default { getUsers,getProducts,getServices, logingFetch, validate, signup }
 
 

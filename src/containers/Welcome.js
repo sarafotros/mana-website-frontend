@@ -34,6 +34,13 @@ class Welcome extends React.Component {
 		localStorage.token = token
 	} 
 
+	logOut = () => {
+		this.setState({
+			email: null
+		  })
+		  localStorage.removeItem("token")
+	}
+
 	getUsers = () => {
 		API.getUsers().then(users => this.setState({ users }));
 	};
@@ -61,16 +68,16 @@ class Welcome extends React.Component {
 		const { users ,products,services } = this.state
 		return (
 			<div>
-				<Header email={this.state.email} />
+				<Header email={this.state.email} logOut={this.logOut} />
 				{this.state.email && <h2> Welcome {this.state.user.name}</h2> }
 				<Route exact path="/" component={() => <MainContainer /> }/>
 				<Route exact path="/products" component={() => <Products products={products}/>} />
 				<Route exact path="/services" component={() => <Services services={services}/>} />
+				
 
 				<Route exact path="/login" component={() => <Login logIn={this.logIn}/>} />
-				<Route exact path="/signup" component={SignUp} />
-
-					<Route exact path="/cart" component={Cart} />
+				<Route exact path="/signup" component={() => <SignUp logIn={this.logIn}/>} />
+				<Route exact path="/cart" component={Cart} />
 
 
 					<Route exact path="/services/:id" component={ServiceContainer}></Route>
