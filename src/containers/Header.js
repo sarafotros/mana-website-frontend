@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {Fragment} from 'react';
 import { Link } from "react-router-dom"
 
-class Header extends Component {
-    state = {  }
+class Header extends React.Component {
+	state = {  }
+	
+	logedIn = () => {
+		return this.props.email ? <Link to="/login"> Profile </Link> : <Fragment><Link to="/login"> Login </Link>  |  <Link to="/signup"> SignUp </Link> </Fragment>
+	}
     render() { 
 	return (
 		<div>
@@ -14,9 +19,8 @@ class Header extends Component {
 			</Link>
 			<Link to="/products"> Products </Link> |{' '}
 			<Link to="/services"> Services </Link> | <Link to="#"> Find us</Link> |
-			{this.props.email ? <Link to="/login"> Profile </Link> : <Link to="/login"> Login </Link>}
-			
-			| <Link to="/signup"> SignUp </Link> |{' '}
+			{ this.logedIn()}
+			 |
 			<Link to="#">Cart</Link>
 		</div>
 	  );

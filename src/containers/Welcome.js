@@ -26,8 +26,7 @@ class Welcome extends React.Component {
 		user: null
 	};
 
-	logIn = (user, token) => {
-		// console.log(user, token)
+	logIn = (user,token) => {
 		this.setState({
 			email: user.email,
 			user: user
@@ -48,6 +47,9 @@ class Welcome extends React.Component {
 	}
 
 	componentDidMount() {
+		// if(localStorage.token) {
+		// 	API.validate(localStorage.token).then(console.log)
+		// }
 		this.getUsers();
 		this.getProducts();
 		this.getServices();
@@ -56,8 +58,6 @@ class Welcome extends React.Component {
 
 
 	render() {
-		console.log(process.env.REACT_APP_MANA)
-
 		const { users ,products,services } = this.state
 		return (
 			<div>

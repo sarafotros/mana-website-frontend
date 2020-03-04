@@ -15,18 +15,19 @@ class Login extends Component {
     
     handleSubmit = (e) => {
         e.preventDefault() 
-        const configurationObject = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify(this.state)
-        }
+    //     const configurationObject = {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //             "Accept": "application/json"
+    //         },
+    //         body: JSON.stringify(this.state)
+    //     }
 
-        fetch('http://localhost:3000/login', configurationObject)
-					.then(response => response.json())
-					.then(json => this.props.logIn(json.user, json.token));
+    //     fetch('http://localhost:3000/login', configurationObject)
+	// 				.then(response => response.json())
+		API.logingFetch(this.state)
+			.then(json => this.props.logIn(json.user, json.token));
       }
     
 
