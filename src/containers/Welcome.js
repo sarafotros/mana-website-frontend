@@ -47,9 +47,9 @@ class Welcome extends React.Component {
 	}
 
 	componentDidMount() {
-		// if(localStorage.token) {
-		// 	API.validate(localStorage.token).then(console.log)
-		// }
+		if(localStorage.token) {
+			API.validate(localStorage.token).then(json => this.logIn(json.email, json.token))
+		}
 		this.getUsers();
 		this.getProducts();
 		this.getServices();

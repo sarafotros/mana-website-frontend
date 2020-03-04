@@ -12,7 +12,7 @@ const get = (url) => (
 )
 
 const getToken = (url,token) => (
-    fetch(url,{'AUTHORIZATION':token}).then(resp => resp.json())
+    fetch(url,{ headers: {'Authorization':token}}).then(resp => resp.json())
     // console.log(url,token)
 )
 
