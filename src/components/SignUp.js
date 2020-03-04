@@ -11,6 +11,8 @@ state = {
 	password: ''
 };
 
+
+
 handleChange = (e) => {
 	this.setState({
 		[e.target.name]: e.target.value
@@ -20,7 +22,9 @@ handleChange = (e) => {
 handleSubmit = (e) => {
 	e.preventDefault()
 	API.signup(this.state)
-	.then(json => this.props.logIn(json.user, json.token));
+	.then(json => {
+		this.props.logIn(json.user, json.token)
+	});
 
 
 }

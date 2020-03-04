@@ -1,7 +1,7 @@
 import React from 'react';
 import API from '../API';
 import MainContainer from './MainContainer';
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 
 import Header from './Header'
 import Footer from '../components/Footer';
@@ -69,12 +69,13 @@ class Welcome extends React.Component {
 		return (
 			<div>
 				<Header email={this.state.email} logOut={this.logOut} />
-				{this.state.email && <h2> Welcome {this.state.user.name}</h2> }
+				{/* {this.state.email && <h2> Welcome {this.state.user.name}</h2> } */}
+				{this.state.email && <Redirect to='/' /> }
 				<Route exact path="/" component={() => <MainContainer /> }/>
 				<Route exact path="/products" component={() => <Products products={products}/>} />
 				<Route exact path="/services" component={() => <Services services={services}/>} />
 				
-
+				
 				<Route exact path="/login" component={() => <Login logIn={this.logIn}/>} />
 				<Route exact path="/signup" component={() => <SignUp logIn={this.logIn}/>} />
 				<Route exact path="/cart" component={Cart} />

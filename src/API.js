@@ -43,7 +43,7 @@ const validate = (token) => {
 }
 
 const signup = (body) => {
-    post(signupURL,body).then(resp => resp.json())
+    return post(signupURL,body).then(resp => resp.json())
 }
 
 
