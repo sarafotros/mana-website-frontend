@@ -26,11 +26,13 @@ class Welcome extends React.Component {
 		user: null
 	};
 
-	logIn =  (user) => {
+	logIn = (user, token) => {
+		// console.log(user, token)
 		this.setState({
 			email: user.email,
 			user: user
 		})
+		localStorage.token = token
 	} 
 
 	getUsers = () => {
@@ -53,7 +55,9 @@ class Welcome extends React.Component {
 
 
 
-    render() {
+	render() {
+		console.log(process.env.REACT_APP_MANA)
+
 		const { users ,products,services } = this.state
 		return (
 			<div>
