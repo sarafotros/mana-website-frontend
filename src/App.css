@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+
+.products-service-parent{
+display: flex;
+height: 800px;
+
+}
+.products-container{
+ background-image: url("https://res.cloudinary.com/ddxhjhvdj/image/upload/c_scale,h_800,w_952/v1583428094/Group_10_jle8dk.png");
+ width: 50%;
+ height: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.service-container{
+  background-image: url("https://res.cloudinary.com/ddxhjhvdj/image/upload/c_scale,h_800,w_952/v1583428094/Group_11_znenbj.png");
+  width: 50%;
+  height: 100%;
+  display: flex;
+   align-items: center;
+ justify-content: center;
+}
+.btn-c{
+  padding: 20px;
+  background-color: #cdd2dd57; 
+  border: 1px, solid, rgba(247, 180, 180, 0.24);
+  border-radius: 10px;
+  width: 140px;
+  color: rgb(54, 50, 53);
+  font-size: 25px;
+  text-align: center;
+  font: Light 100px/120px Alegreya Sans SC;
+}

@@ -23,8 +23,7 @@ class Welcome extends React.Component {
 		email: null,
 		user: null,
 		sortedProducts: null,
-
-		cart: []
+		cart: [],
 		sortedServices: null,
 		sortP: '',
 		sortS: ''
