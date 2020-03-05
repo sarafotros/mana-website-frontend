@@ -5,7 +5,9 @@ const MainContainer = () => {
 
     return (
 			<div>
-				{/* <Banner /> */}
+            <div class="banner">
+                <h2>MANA SKIN CARE</h2>
+                {/* <Banner /> */}</div>
 				<div class="products-service-parent">
 					<div class="products-container">
 						<Link to="/products">

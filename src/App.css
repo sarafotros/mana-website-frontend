@@ -44,11 +44,18 @@
   color: white;
 
 }
-
+.banner{
+ display: flex; 
+  margin-bottom: 10px;
+  color: white;
+  height: 150px;
+  text-align: center;
+  background-image: url("https://res.cloudinary.com/ddxhjhvdj/image/upload/v1583438459/Group_16_xomabl.png");
+}
 
 .products-service-parent{
 display: flex;
-height: 800px;
+height: 300px;
 
 }
 .products-container{
@@ -69,13 +76,18 @@ height: 800px;
  justify-content: center;
 }
 .btn-c{
-  padding: 20px;
-  background-color: #cdd2dd57; 
+  padding: 14px;
+  margin: 5px;
+  background-color: #c2b5b88a; 
   border: 1px, solid, rgba(247, 180, 180, 0.24);
-  border-radius: 10px;
-  width: 140px;
+  border-radius: 7px;
+  width: 150px;
   color: rgb(54, 50, 53);
-  font-size: 25px;
+  font-size: 22px;
+  font-weight: bold;
   text-align: center;
   font: Light 100px/120px Alegreya Sans SC;
+  color: aliceblue;
+  box-shadow: 2px, rgb(255, 213, 196);
+  text-transform: uppercase;
 }
