@@ -49,13 +49,21 @@ html {
   color: white;
 
 }
+.h2-banner{
+  text-shadow: rgba(131, 80, 58, 0.966) 7px 5px 11px;
+  font: Regular 30px/36px Alegreya Sans;
+  font-size: 43px;
+}
 .banner{
- display: flex; 
+  display: flex; 
+  align-items: center;
+  justify-content: center;
   margin-bottom: 10px;
   color: white;
-  height: 150px;
+  height: 250px;
   text-align: center;
-  background-image: url("https://res.cloudinary.com/ddxhjhvdj/image/upload/v1583438459/Group_16_xomabl.png");
+  background-image: url("https://res.cloudinary.com/ddxhjhvdj/image/upload/c_scale,h_304,w_1700/v1583439443/Group_16_t7ul6r.png");
+  background-repeat: no-repeat;
 }
 
   /*       FOOTER      */
@@ -116,8 +124,7 @@ height: 300px;
   border-radius: 7px;
   width: 150px;
   color: rgb(54, 50, 53);
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 18px;
   text-align: center;
   font: Light 100px/120px Alegreya Sans SC;
   color: aliceblue;

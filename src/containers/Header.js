@@ -21,15 +21,17 @@ class Header extends React.Component {
 			<div class="navLinks">
 				<Link to="/products"> Products </Link>
 				<Link to="/services"> Services </Link>
-				<Link to="#"> Find us</Link>
+				<a href="https://goo.gl/maps/HpENPRs9KGigAwAT8" target="_blank">
+					{' '}
+					Find us
+				</a>
 			</div>
 			<div class="logCart">
-				{ this.logedIn()}
+				{this.logedIn()}
 				<Link to="/cart">Cart</Link>
 			</div>
-
 		</div>
-	  );
+	);
     }
 }
  
