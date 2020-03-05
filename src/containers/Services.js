@@ -2,17 +2,36 @@ import React, { Component } from 'react';
 import Service from '../components/Service'
 
 class Services extends Component {
-    state = {  }
+	state = {};
 
-    mapServices = () => {
-        return this.props.services.map(service => <Service service={service} key={service.id} />)
-    }
+	mapServices = () => {
+		return this.props.services.map(service => (
+			<Service service={service} key={service.id} />
+		));
+	};
 
-    render() { 
-        return (
-        <div>{this.mapServices()}</div>
-        )
-    }
+	handleChange = e => {
+		this.props.sortServicesByPrice(e.target.value);
+	};
+
+	render() {
+		return (
+			<div>
+				<label>
+					<strong> Filter Services By Price:</strong>
+                    <select
+                        value={this.props.serviceSortBy}
+                        onChange={this.handleChange}
+                    >
+						<option value="all">All</option>
+						<option value="low-to-high">Lowest to Highest</option>
+						<option value="high-to-low">Highest to Lowest</option>
+					</select>
+				</label>
+				{this.mapServices()}
+			</div>
+		);
+	}
 }
  
 export default Services;

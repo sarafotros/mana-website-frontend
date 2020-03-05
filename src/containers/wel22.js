@@ -23,11 +23,10 @@ class Welcome extends React.Component {
 		email: null,
 		user: null,
 		sortedProducts: null,
-
-		cart: []
 		sortedServices: null,
 		sortP: '',
-		sortS: ''
+		sortS: '',
+		filteredP: ''
 	};
 
 	logIn = (user, token) => {
@@ -69,7 +68,7 @@ class Welcome extends React.Component {
 		this.getProducts();
 		this.getServices();
 	}
-
+	//products
 	sortProductsByPrice = productSortBy => {
 		this.setState({ sortP: productSortBy });
 		if (productSortBy === 'all') {
@@ -77,51 +76,88 @@ class Welcome extends React.Component {
 		}
 		if (productSortBy === 'low-to-high') {
 			return this.setProductSort(
-				[...this.state.products].sort((a, b) => (a.price > b.price ? 1 : -1)));
+				[...this.state.products].sort((a, b) => (a.price > b.price ? 1 : -1))
+			);
 		}
 		if (productSortBy === 'high-to-low') {
 			return this.setProductSort(
-				[...this.state.products].sort((a, b) => (a.price < b.price ? 1 : -1)));
+				[...this.state.products].sort((a, b) => (a.price < b.price ? 1 : -1))
+			);
 		}
 	};
 
+	filterProductsByCategory = () => {
+		const { filteredP, sortP, products } = this.state;
 
-	sortServicesByPrice = serviceSortBy => {
-		this.setState({ sortS: serviceSortBy });
-		if (serviceSortBy === 'all') {
-			return this.setServiceSort(this.state.services)
+		// if (!filteredP) return products;
+
+		switch (filteredP) {
+			case 'Face':
+				return products.filter(product => product.category === 'Face');
+			case 'Body':
+				return products.filter(product => product.category === 'Body');
+			case 'Eye':
+				return products.filter(product => product.category === 'Eye');
+			case 'Hands':
+				return products.filter(product => product.category === 'Hands');
+			case 'low-to-high':
+				return this.setProductSort(
+					[...products].sort((a, b) => (a.price > b.price ? 1 : -1))
+				);
+			case 'high-to-low':
+				return this.setProductSort(
+					[...products].sort((a, b) => (a.price < b.price ? 1 : -1))
+				);
+			default:
+				return products;
 		}
-		if (serviceSortBy === 'low-to-high') {
+
+		// if (this.state.filteredP === "Eye") {
+		// 	return this.state.products.filter(product => product.category === 'Eye');
+		// } else {
+		// 	return this.state.products
+		// 	console.log("i'm getting all the products")
+		// }
+	};
+	setFilterP = filter => {
+		this.setState({ filteredP: filter });
+	};
+
+	//Services
+	sortServicesByPrice = () => {
+		this.setState({ sortS: this.state.sortP });
+		if (this.state.sortP === 'all') {
+			return this.setServiceSort(this.state.services);
+		}
+		if (this.state.sortP === 'low-to-high') {
 			return this.setServiceSort(
-				[...this.state.services].sort((a, b) => (a.price > b.price ? 1 : -1)));
+				[...this.state.services].sort((a, b) => (a.price > b.price ? 1 : -1))
+			);
 		}
-		if (serviceSortBy === 'hight-to-low') {
+		if (this.state.sortP === 'hight-to-low') {
 			return this.setServiceSort(
-				[...this.state.services].sort((a, b) => (a.price < b.price ? 1 : -1)));
+				[...this.state.services].sort((a, b) => (a.price < b.price ? 1 : -1))
+			);
 		}
-	}
+	};
 
 	setProductSort = products => {
 		this.setState({ sortedProducts: products });
 	};
-
-
-	///cart
-
-	addToTheCart = (prod) => {
-		this.setState({
-			cart: [...this.state.cart,prod]
-		})
-	}
-
 
 	setServiceSort = services => {
 		this.setState({ sortedServices: services });
 	};
 
 	render() {
-		const { users, products, services, sortedProducts, sortedServices } = this.state;
-
+		const {
+			users,
+			products,
+			services,
+			sortedProducts,
+			sortedServices,
+			filteredP
+		} = this.state;
 
 		return (
 			<div>
@@ -133,9 +169,11 @@ class Welcome extends React.Component {
 					path="/products"
 					component={() => (
 						<Products
-							products={sortedProducts ? sortedProducts : products}
+							products={this.filterProductsByCategory}
 							sortProductsByPrice={this.sortProductsByPrice}
 							productSortBy={this.state.sortP}
+							setFilterP={this.setFilterP}
+							filteredP={filteredP}
 						/>
 					)}
 				/>
@@ -161,10 +199,10 @@ class Welcome extends React.Component {
 					path="/signup"
 					component={() => <SignUp logIn={this.logIn} />}
 				/>
-				<Route exact path="/cart" component={() => <Cart cart={this.state.cart} />} />
+				<Route exact path="/cart" component={Cart} />
 
-				<Route exact path="/services/:id" component={(props) => <ServiceContainer {...props} /> }></Route>
-				<Route exact path="/products/:id" component={(props) => <ProductContainer {...props}  addToTheCart={this.addToTheCart}/>}></Route>
+				<Route exact path="/services/:id" component={ServiceContainer}></Route>
+				<Route exact path="/products/:id" component={ProductContainer}></Route>
 				{/* <Instagram /> */}
 				<Footer />
 			</div>
