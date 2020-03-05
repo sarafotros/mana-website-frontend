@@ -10,7 +10,6 @@ class Products extends Component {
     }
 
     handleChange = e => {
-        // this.setState({sort: e.target.value})
         this.props.sortProductsByPrice(e.target.value);
     }
 
@@ -19,7 +18,7 @@ class Products extends Component {
      return (
 				<div>
 					<label>
-						<strong> Filter By Price:</strong>
+						<strong> Filter Products By Price:</strong>
 						<select
 							value={this.props.productSortBy}
 							onChange={this.handleChange}

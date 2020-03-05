@@ -23,7 +23,9 @@ class Welcome extends React.Component {
 		email: null,
 		user: null,
 		sortedProducts: null,
-		sort: ''
+		sortedServices: null,
+		sortP: '',
+		sortS: ''
 	};
 
 	logIn = (user, token) => {
@@ -67,29 +69,46 @@ class Welcome extends React.Component {
 	}
 
 	sortProductsByPrice = productSortBy => {
-		this.setState({ sort: productSortBy });
+		this.setState({ sortP: productSortBy });
 		if (productSortBy === 'all') {
 			return this.setProductSort(this.state.products);
 		}
 		if (productSortBy === 'low-to-high') {
 			return this.setProductSort(
-				[...this.state.products].sort((a, b) => (a.price > b.price ? 1 : -1))
-			);
+				[...this.state.products].sort((a, b) => (a.price > b.price ? 1 : -1)));
 		}
-
 		if (productSortBy === 'high-to-low') {
 			return this.setProductSort(
-				[...this.state.products].sort((a, b) => (a.price < b.price ? 1 : -1))
-			);
+				[...this.state.products].sort((a, b) => (a.price < b.price ? 1 : -1)));
 		}
 	};
+
+
+	sortServicesByPrice = serviceSortBy => {
+		this.setState({ sortS: serviceSortBy });
+		if (serviceSortBy === 'all') {
+			return this.setServiceSort(this.state.services)
+		}
+		if (serviceSortBy === 'low-to-high') {
+			return this.setServiceSort(
+				[...this.state.services].sort((a, b) => (a.price > b.price ? 1 : -1)));
+		}
+		if (serviceSortBy === 'hight-to-low') {
+			return this.setServiceSort(
+				[...this.state.services].sort((a, b) => (a.price < b.price ? 1 : -1)));
+		}
+	}
 
 	setProductSort = products => {
 		this.setState({ sortedProducts: products });
 	};
 
+	setServiceSort = services => {
+		this.setState({ sortedServices: services });
+	};
+
 	render() {
-		const { users, products, services, sortedProducts } = this.state;
+		const { users, products, services, sortedProducts, sortedServices } = this.state;
 
 		return (
 			<div>
@@ -103,14 +122,20 @@ class Welcome extends React.Component {
 						<Products
 							products={sortedProducts ? sortedProducts : products}
 							sortProductsByPrice={this.sortProductsByPrice}
-							productSortBy={this.state.sort}
+							productSortBy={this.state.sortP}
 						/>
 					)}
 				/>
 				<Route
 					exact
 					path="/services"
-					component={() => <Services services={services} />}
+					component={() => (
+						<Services
+							services={sortedServices ? sortedServices : services}
+							sortServicesByPrice={this.sortServicesByPrice}
+							serviceSortBy={this.state.sortS}
+						/>
+					)}
 				/>
 
 				<Route
