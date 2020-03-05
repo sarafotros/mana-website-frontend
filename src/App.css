@@ -22,6 +22,8 @@ html {
   text-decoration: none;
   padding-right: 5px;
 }
+
+
 .navBar a:hover{
   color: #8B6647;
 }
@@ -137,8 +139,38 @@ height: 300px;
 
 .productGrid{
   height: 90vh;
+  height: 100%;
   margin: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.productItem {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  padding: 4rem;
+}
+
+.productItem img {
+  max-width: 15vw;
+}
+.productItem a {
+   color: #D9BB9B;
+    text-decoration: inherit; /* no underline */
+    text-decoration: none;
+    padding-right: 5px;
+}
+
+.productItem:hover:after {
+  content: "";
+    background: rgba(0,0,0,.5);
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+
+div:hover:after {
+    opacity: 1;
 }
