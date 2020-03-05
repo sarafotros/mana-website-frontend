@@ -1,5 +1,10 @@
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
 
+/*          HEADER            */
 .navBar {
   background-image: url("https://res.cloudinary.com/ddxhjhvdj/image/upload/v1583428236/Group_8_dt0j1c.png");
   height: 182px;
@@ -53,6 +58,34 @@
   background-image: url("https://res.cloudinary.com/ddxhjhvdj/image/upload/v1583438459/Group_16_xomabl.png");
 }
 
+  /*       FOOTER      */
+.footerBar {
+  background-image: url("https://res.cloudinary.com/ddxhjhvdj/image/upload/v1583428236/Group_27_rmoefk.png");
+  height: 182px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font: Regular 30px/36px Alegreya Sans;
+  text-transform: uppercase;
+  text-decoration: none;
+  justify-content: space-between;
+  /* margin-top: -5px; */
+}
+.footerLink {
+  color: white;
+  margin: 0 5em 0 5em;
+}
+
+.footerBar a {
+  text-decoration: inherit; /* no underline */
+  text-decoration: none;
+  padding-right: 5px;
+}
+.footerBar a:hover{
+  color: #8B6647;
+}
+
+/*    main content   */
 .products-service-parent{
 display: flex;
 height: 300px;
@@ -90,4 +123,15 @@ height: 300px;
   color: aliceblue;
   box-shadow: 2px, rgb(255, 213, 196);
   text-transform: uppercase;
+}
+
+
+/*      Products          */
+
+.productGrid{
+  height: 90vh;
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
