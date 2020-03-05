@@ -28,7 +28,9 @@ class Services extends Component {
 						<option value="high-to-low">Highest to Lowest</option>
 					</select>
 				</label>
+				<div class="productGrid">
 				{this.mapServices()}
+				</div>
 			</div>
 		);
 	}
