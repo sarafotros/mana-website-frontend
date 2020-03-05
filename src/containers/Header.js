@@ -21,7 +21,7 @@ class Header extends React.Component {
 			<Link to="/services"> Services </Link> | <Link to="#"> Find us</Link> |
 			{ this.logedIn()}
 			 |
-			<Link to="#">Cart</Link>
+			<Link to="/cart">Cart</Link>
 		</div>
 	  );
     }

@@ -23,6 +23,8 @@ class Welcome extends React.Component {
 		email: null,
 		user: null,
 		sortedProducts: null,
+
+		cart: []
 		sortedServices: null,
 		sortP: '',
 		sortS: ''
@@ -103,12 +105,23 @@ class Welcome extends React.Component {
 		this.setState({ sortedProducts: products });
 	};
 
+
+	///cart
+
+	addToTheCart = (prod) => {
+		this.setState({
+			cart: [...this.state.cart,prod]
+		})
+	}
+
+
 	setServiceSort = services => {
 		this.setState({ sortedServices: services });
 	};
 
 	render() {
 		const { users, products, services, sortedProducts, sortedServices } = this.state;
+
 
 		return (
 			<div>
@@ -148,10 +161,10 @@ class Welcome extends React.Component {
 					path="/signup"
 					component={() => <SignUp logIn={this.logIn} />}
 				/>
-				<Route exact path="/cart" component={Cart} />
+				<Route exact path="/cart" component={() => <Cart cart={this.state.cart} />} />
 
-				<Route exact path="/services/:id" component={ServiceContainer}></Route>
-				<Route exact path="/products/:id" component={ProductContainer}></Route>
+				<Route exact path="/services/:id" component={(props) => <ServiceContainer {...props} /> }></Route>
+				<Route exact path="/products/:id" component={(props) => <ProductContainer {...props}  addToTheCart={this.addToTheCart}/>}></Route>
 				{/* <Instagram /> */}
 				<Footer />
 			</div>
