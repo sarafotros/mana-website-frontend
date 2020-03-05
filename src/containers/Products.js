@@ -2,10 +2,16 @@ import React, { Component } from 'react';
 import Product from '../components/Product'
 
 class Products extends Component {
-    state = {  }
+    state = { 
+     }
 
     mapProducts = () => {
         return this.props.products.map(product => <Product product={product} key={product.id}/>)
+    }
+
+    handleChange = e => {
+        // this.setState({sort: e.target.value})
+        this.props.sortProductsByPrice(e.target.value);
     }
 
     render() { 
@@ -16,7 +22,7 @@ class Products extends Component {
 						<strong> Filter By Price:</strong>
 						<select
 							value={this.props.productSortBy}
-							onChange={e => this.props.sortProductsByPrice(e.target.value)}
+							onChange={this.handleChange}
 						>
 							<option value="all">All</option>
 							<option value="low-to-high">Lowest to Highest</option>

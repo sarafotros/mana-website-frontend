@@ -1,11 +1,11 @@
 import React from 'react';
 import API from '../API';
 import MainContainer from './MainContainer';
-import { Route, Redirect } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom';
 
-import Header from './Header'
+import Header from './Header';
 import Footer from '../components/Footer';
-import Products from './Products'; 
+import Products from './Products';
 import Services from './Services';
 import ServiceContainer from './ServiceContainer';
 import ProductContainer from './ProductContainer';
@@ -13,9 +13,7 @@ import ProductContainer from './ProductContainer';
 import Login from '../components/Login';
 import SignUp from '../components/SignUp';
 
-import Cart from '../components/Cart'
-
-
+import Cart from '../components/Cart';
 
 class Welcome extends React.Component {
 	state = {
@@ -24,7 +22,8 @@ class Welcome extends React.Component {
 		services: [],
 		email: null,
 		user: null,
-		sortedProducts: null
+		sortedProducts: null,
+		sort: ''
 	};
 
 	logIn = (user, token) => {
@@ -68,18 +67,20 @@ class Welcome extends React.Component {
 	}
 
 	sortProductsByPrice = productSortBy => {
-		console.log(productSortBy);
+		this.setState({ sort: productSortBy });
 		if (productSortBy === 'all') {
-			console.log(this.state.products);
 			return this.setProductSort(this.state.products);
 		}
 		if (productSortBy === 'low-to-high') {
-			return this.setProductSort([...this.state.products].sort((a, b) => (a.price > b.price ? 1 : -1)));
+			return this.setProductSort(
+				[...this.state.products].sort((a, b) => (a.price > b.price ? 1 : -1))
+			);
 		}
 
 		if (productSortBy === 'high-to-low') {
-			return this.setProductSort([...this.state.products].sort((a, b) => (a.price < b.price ? 1 : -1)));
-			;
+			return this.setProductSort(
+				[...this.state.products].sort((a, b) => (a.price < b.price ? 1 : -1))
+			);
 		}
 	};
 
@@ -102,6 +103,7 @@ class Welcome extends React.Component {
 						<Products
 							products={sortedProducts ? sortedProducts : products}
 							sortProductsByPrice={this.sortProductsByPrice}
+							productSortBy={this.state.sort}
 						/>
 					)}
 				/>
@@ -131,5 +133,5 @@ class Welcome extends React.Component {
 		);
 	}
 }
- 
+
 export default Welcome;
