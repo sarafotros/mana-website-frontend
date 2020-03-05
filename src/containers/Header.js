@@ -10,18 +10,24 @@ class Header extends React.Component {
 	}
     render() { 
 	return (
-		<div>
+		<div class="navBar">
 			<Link to="/">
 				<img
-					src="https://res.cloudinary.com/ddxhjhvdj/image/upload/ar_1:1,b_rgb:f9fcff,bo_5px_solid_rgb:fdf9f9,c_fill,g_auto,r_max,w_200/v1583246911/Mana_fokaby.png"
+					src="https://res.cloudinary.com/ddxhjhvdj/image/upload/c_scale,h_88/v1583430725/Group_3_q6qgti.png"
 					alt="logo"
+					class="logo"
 				/>
 			</Link>
-			<Link to="/products"> Products </Link> |{' '}
-			<Link to="/services"> Services </Link> | <Link to="#"> Find us</Link> |
-			{ this.logedIn()}
-			 |
-			<Link to="/cart">Cart</Link>
+			<div class="navLinks">
+				<Link to="/products"> Products </Link>
+				<Link to="/services"> Services </Link>
+				<Link to="#"> Find us</Link>
+			</div>
+			<div class="logCart">
+				{ this.logedIn()}
+				<Link to="/cart">Cart</Link>
+			</div>
+
 		</div>
 	  );
     }
