@@ -11,9 +11,21 @@ class Products extends Component {
     render() { 
 
      return (
-
-        <div>{this.mapProducts()}</div>
-        )
+				<div>
+					<label>
+						<strong> Filter By Price:</strong>
+						<select
+							value={this.props.productSortBy}
+							onChange={e => this.props.sortProductsByPrice(e.target.value)}
+						>
+							<option value="all">All</option>
+							<option value="low-to-high">Lowest to Highest</option>
+							<option value="high-to-low">Highest to Lowest</option>
+						</select>
+					</label>
+					{this.mapProducts()}
+				</div>
+			);
     }
 }
  
