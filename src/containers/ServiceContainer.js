@@ -14,6 +14,7 @@ class ServiceContainer extends Component {
 
  
         render() { 
+            console.log(this)
             return  this.state.service? 
             <ServiceShow service={this.state.service} />
             : 
