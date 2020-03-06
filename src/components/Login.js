@@ -22,15 +22,19 @@ class Login extends Component {
 
 	render() {
 		return (
-			<div>
-				<h1>Login</h1>
-				<form onSubmit={this.handleSubmit}>
-					<label>Email:</label>
-					<input type="text" name="email" onChange={this.handleChange}/> <br />
-					<label>Password</label>
-					<input type="password" name="password" onChange={this.handleChange}/> <br />
-					<input type="submit" value="Sign In" />
-				</form>
+			<div class="loginPage">
+				<div class="loginContainer">
+					<h1 class="loginH1">Login</h1>
+					<div class="loginForm">
+					<form onSubmit={this.handleSubmit}>
+						<label>Email:</label>
+						<input type="text" name="email" onChange={this.handleChange}/> <br />
+						<label>Password</label>
+						<input type="password" name="password" onChange={this.handleChange}/> <br />
+						<button type="submit" value="Sign In" class="button">Login</button>
+					</form>
+					</div>
+				</div>
 			</div>
 		);
 	}
