@@ -1,9 +1,9 @@
-
-html {
+/* html,
+body {
+  width: 100%;
   height: 100%;
-  box-sizing: border-box;
-}
-
+  overflow-x:hidden;
+} */
 /*          HEADER            */
 .navBar {
   background-image: url("https://res.cloudinary.com/ddxhjhvdj/image/upload/v1583428236/Group_8_dt0j1c.png");
@@ -106,21 +106,26 @@ height: 50vh;
   max-width: 100px;
 }
 .products-container{
- background-image: url("https://res.cloudinary.com/ddxhjhvdj/image/upload/c_scale,h_800,w_952/v1583428094/Group_10_jle8dk.png");
+ background-image: url("https://res.cloudinary.com/ddxhjhvdj/image/upload/c_scale,w_700/v1583443344/freshh-connection-xTLqJqtq8R4-unsplash_unqzxv.jpg");
  width: 50%;
  height: 100%;
  display: flex;
  align-items: center;
  justify-content: center;
+  background-repeat: no-repeat;
+  border-radius: 2px;
 }
 
 .service-container{
-  background-image: url("https://res.cloudinary.com/ddxhjhvdj/image/upload/c_scale,h_800,w_952/v1583428094/Group_11_znenbj.png");
+  background-image: url("https://res.cloudinary.com/ddxhjhvdj/image/upload/c_scale,w_696/v1583443344/nika-akin-NaWwG6ABSoE-unsplash_ei8h2j.jpg");
   width: 50%;
   height: 100%;
   display: flex;
    align-items: center;
- justify-content: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+ 
 }
 .btn-c{
   padding: 14px;
