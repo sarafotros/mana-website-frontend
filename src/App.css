@@ -343,12 +343,17 @@ input[type=text], input[type=password] {
 }
 
 .cartItems {
-  padding: 12px 20px;
   margin: 8px 10px;
+  padding-right: 2em;
   display: inline-block;
   display: flex;
   border: 1px solid #D9BB9B;
   box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.cartText{
+  margin-top: 1em;
 }
 
 

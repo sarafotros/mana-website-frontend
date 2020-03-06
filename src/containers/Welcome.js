@@ -118,6 +118,12 @@ class Welcome extends React.Component {
 		this.setState({ sortedServices: services });
 	};
 
+	removeFromCart = (prod) => {
+		this.setState({
+			cart: this.state.cart.filter(products => products != prod)
+		})
+	}
+
 	render() {
 		const { users, products, services, sortedProducts, sortedServices } = this.state;
 
@@ -160,7 +166,7 @@ class Welcome extends React.Component {
 					path="/signup"
 					component={() => <SignUp logIn={this.logIn} />}
 				/>
-				<Route exact path="/cart" component={() => <Cart cart={this.state.cart} />} />
+				<Route exact path="/cart" component={() => <Cart cart={this.state.cart} removeFromCart={this.removeFromCart} />} />
 
 				<Route exact path="/services/:id" component={(props) => <ServiceContainer {...props} /> }></Route>
 				<Route exact path="/products/:id" component={(props) => <ProductContainer {...props}  addToTheCart={this.addToTheCart}/>}></Route>
