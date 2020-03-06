@@ -73,6 +73,8 @@ html {
   text-align: center;
   background-image: url("https://res.cloudinary.com/ddxhjhvdj/image/upload/c_scale,h_304,w_1700/v1583439443/Group_16_t7ul6r.png");
   background-repeat: no-repeat;
+  margin-bottom: 2em;
+
 }
 
   /*       FOOTER      */
@@ -106,11 +108,12 @@ html {
 .products-service-parent{
 display: flex;
 height: 50vh;
-
+margin-bottom: 2;
 }
 
 .products-container img{
   max-width: 100px;
+  
 }
 .products-container{
  background-image: url("https://res.cloudinary.com/ddxhjhvdj/image/upload/c_scale,w_700/v1583443344/freshh-connection-xTLqJqtq8R4-unsplash_unqzxv.jpg");
@@ -121,10 +124,11 @@ height: 50vh;
  justify-content: center;
   background-repeat: no-repeat;
   border-radius: 2px;
+ 
 }
 
 .service-container{
-  background-image: url("https://res.cloudinary.com/ddxhjhvdj/image/upload/c_scale,w_696/v1583443344/nika-akin-NaWwG6ABSoE-unsplash_ei8h2j.jpg");
+  background-image: url("https://res.cloudinary.com/ddxhjhvdj/image/upload/c_scale,w_850/v1583428094/Group_11_znenbj.png");
   width: 50%;
   height: 100%;
   display: flex;
