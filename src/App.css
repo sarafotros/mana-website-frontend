@@ -350,6 +350,7 @@ input[type=text], input[type=password] {
   border: 1px solid #D9BB9B;
   box-sizing: border-box;
   vertical-align: middle;
+  border-radius: 6px;
 }
 
 .cartText{
