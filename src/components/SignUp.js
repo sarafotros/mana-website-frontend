@@ -31,24 +31,28 @@ handleSubmit = (e) => {
 
 render(){
 	return (			
-	<div>
-		<h1>Sign Up</h1>
-		<form onSubmit={this.handleSubmit}>
-			<label>Name:</label>
-			<input type="text" name="name" onChange={this.handleChange}/> <br />
-			<label>Family Name:</label>
-			<input type="text" name="family_name" onChange={this.handleChange}/> <br />
-			<label>Email:</label>
-			<input type="text" name="email" onChange={this.handleChange}/> <br />
-			<label>Date of Birth:</label>
-			<input type="date" name="dob" onChange={this.handleChange}/> <br />
-			<label>Phone Number:</label>
-			<input type="text" name="phone" onChange={this.handleChange}/> <br />
-			<label>Password</label>
-			<input type="password" name="password" onChange={this.handleChange}/> <br />
-			
-			<input type="submit" value="Sign up" />
-		</form>
+	<div class="signPage">
+		<div class="signContainer">
+		<h1 class="signH1">Sign Up</h1>
+		<div class="loginForm">
+			<form onSubmit={this.handleSubmit}>
+				<label>Name:</label>
+				<input type="text" name="name" onChange={this.handleChange}/> <br />
+				<label>Family Name:</label>
+				<input type="text" name="family_name" onChange={this.handleChange}/> <br />
+				<label>Email:</label>
+				<input type="text" name="email" onChange={this.handleChange}/> <br />
+				<label>Date of Birth:</label>
+				<input type="date" name="dob" onChange={this.handleChange}/> <br />
+				{/* <label>Phone Number:</label>
+				<input type="text" name="phone" onChange={this.handleChange}/> <br /> */}
+				<label>Password</label>
+				<input type="password" name="password" onChange={this.handleChange}/> <br />
+				
+				<input type="submit" value="Sign up" class="button"/>
+			</form>
+		</div>
+		</div>
 	</div>
 	);
 	}

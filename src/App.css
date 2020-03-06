@@ -182,7 +182,7 @@ margin-bottom: 2;
 .productGrid{
   font-family: Alegreya Sans SC;
   height: 100%;
-  margin: 2rem;
+  /* margin: 2rem; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -220,4 +220,113 @@ margin-bottom: 2;
     -moz-transition: all 1s;
     -webkit-transition: all 1s;
     transition: all 1s;
+}
+
+
+/*   ---Login---- */
+
+.loginPage{
+  height: 63vh;
+  display: flex;
+  align-items: center;
+}
+
+.loginContainer{
+  box-shadow: 1px 1px 40px rgba(82, 64, 64, 0.1);
+  /* background-color: red; */
+  height: 50vh;
+  width: 40vw;
+  text-align: center;
+}
+
+.loginH1 {
+  margin-top: 1em;
+  font-weight: bold;
+  font-family: Alegreya Sans;
+  width: 100%;
+  color: #CC7C68;
+  text-align: center;
+  margin: 1.5em auto;
+}
+.loginForm{
+  width: 70%;
+  font-family: Alegreya Sans SC;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #D9BB9B;
+  box-sizing: border-box;
+}
+
+.button {
+  background-color: #D9BB9B;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* sign up */
+
+.signPage{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  
+}
+
+.signContainer{
+  box-shadow: 1px 1px 40px rgba(82, 64, 64, 0.1);
+  /* background-color: red; */
+  height: 100%;
+  width: 40vw;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 2.5em;
+  padding-bottom: 2em;
+}
+
+.signH1 {
+  font-weight: bold;
+  font-family: Alegreya Sans;
+  width: 100%;
+  color: #CC7C68;
+  text-align: center;
+  margin: 1em auto 0.2em auto;
+}
+.signForm{
+  width: 70%;
+  font-family: Alegreya Sans SC;
+}
+
+/*  --------- Cart ------- */
+
+.cartPage{
+  height: 63vh;
+  display: flex;
+  align-items: center;
+}
+
+.cartProductsContainer{
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  height: 90%;
+  width: 60%;
+  /* border-style: solid;
+  border-color: #D9BB9B; */
+  box-shadow: 1px 1px 40px rgba(82, 64, 64, 0.1);
+}
+
+.emptyCart {
+  font-weight: bold;
+  font-family: Alegreya Sans;
+  width: 100%;
+  color: #CC7C68;
+  text-align: left;
 }
