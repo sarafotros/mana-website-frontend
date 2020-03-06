@@ -16,7 +16,9 @@ class Services extends Component {
 
 	render() {
 		return (
-			<div>
+			<div class="productsPageContainer">
+				<h1 class="productsH1">Services</h1>
+				<div class="search">
 				<label>
 					<strong> Filter Services By Price:</strong>
                     <select
@@ -28,6 +30,7 @@ class Services extends Component {
 						<option value="high-to-low">Highest to Lowest</option>
 					</select>
 				</label>
+				</div>
 				<div class="productGrid">
 				{this.mapServices()}
 				</div>
