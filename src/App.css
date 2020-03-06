@@ -59,9 +59,10 @@ html {
 
 }
 .h2-banner{
-  text-shadow: rgba(131, 80, 58, 0.966) 7px 5px 11px;
-  font: Regular 30px/36px Alegreya Sans;
-  font-size: 43px;
+  text-shadow: rgba(83, 53, 40, 0.966) 7px 2px 5px;
+  font-family: Alegreya Sans;
+  font-size: 53px;
+  color: rgba(255, 247, 244, 0.947);
 }
 .banner{
   display: flex; 
@@ -165,9 +166,10 @@ margin-bottom: 2;
   font-family: Alegreya Sans;
   height: 100%;
   width: 100%;
-  color: #CC7C68;
+  color: rgba(216, 147, 130, 0.824);
   text-align: left;
   margin-left: 2em;
+  text-transform: uppercase;
 }
 
 .search {
@@ -244,13 +246,14 @@ margin-bottom: 2;
   font-weight: bold;
   font-family: Alegreya Sans;
   width: 100%;
-  color: #CC7C68;
+  color: rgba(204, 124, 104, 0.856);
   text-align: center;
   margin: 1.5em auto;
 }
 .loginForm{
   width: 70%;
   font-family: Alegreya Sans SC;
+  border-radius: 6px;
 }
 
 input[type=text], input[type=password] {
@@ -260,6 +263,7 @@ input[type=text], input[type=password] {
   display: inline-block;
   border: 1px solid #D9BB9B;
   box-sizing: border-box;
+  border-radius: 6px;
 }
 
 .button {
@@ -270,6 +274,7 @@ input[type=text], input[type=password] {
   border: none;
   cursor: pointer;
   width: 100%;
+  border-radius: 6px;
 }
 
 /* sign up */
@@ -329,4 +334,27 @@ input[type=text], input[type=password] {
   width: 100%;
   color: #CC7C68;
   text-align: left;
+}
+
+
+/* product show */
+.btn-card{
+    background-color: #D9BB9B;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  border-radius: 6px;
+}
+.productsH2 {
+  margin-top: 1em;
+  font-weight: bold;
+  font-family: Alegreya Sans;
+  height: 100%;
+  width: 90%;
+  color: rgb(199, 161, 151);
+  text-align: center;
+  margin-left: 2em;
 }

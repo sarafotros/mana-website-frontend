@@ -19,21 +19,26 @@ class Services extends Component {
 			<div class="productsPageContainer">
 				<h1 class="productsH1">Services</h1>
 				<div class="search">
-				<label>
-					<strong> Filter Services By Price:</strong>
-                    <select
-                        value={this.props.serviceSortBy}
-                        onChange={this.handleChange}
-                    >
-						<option value="all">All</option>
-						<option value="low-to-high">Lowest to Highest</option>
-						<option value="high-to-low">Highest to Lowest</option>
-					</select>
-				</label>
+					<label >
+						<strong class="productsH1"> Filter Services By Price:</strong>
+						<select
+							value={this.props.serviceSortBy}
+							onChange={this.handleChange}
+							class="productsH1"
+						>
+							<option class="productsH1" value="all">
+								All
+							</option>
+							<option class="productsH1" value="low-to-high">
+								Lowest to Highest
+							</option>
+							<option class="productsH1" value="high-to-low">
+								Highest to Lowest
+							</option>
+						</select>
+					</label>
 				</div>
-				<div class="productGrid">
-				{this.mapServices()}
-				</div>
+				<div class="productGrid">{this.mapServices()}</div>
 			</div>
 		);
 	}
