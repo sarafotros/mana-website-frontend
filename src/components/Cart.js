@@ -5,7 +5,7 @@ class Cart extends Component {
  
     renderEachProduct = () => {
         const {cart} = this.props
-        return cart.map(product => <CartProduct product={product}/>)
+        return cart.map(product => <CartProduct product={product} removeFromCart={this.props.removeFromCart}/>)
     }
 
     render() { 

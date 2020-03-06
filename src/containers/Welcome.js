@@ -121,6 +121,12 @@ class Welcome extends React.Component {
 		this.setState({ sortedServices: services });
 	};
 
+	removeFromCart = (prod) => {
+		this.setState({
+			cart: this.state.cart.filter(products => products != prod)
+		})
+	}
+
 	render() {
 		const {
 			users,
@@ -168,11 +174,7 @@ class Welcome extends React.Component {
 					path="/signup"
 					component={() => <SignUp logIn={this.logIn} />}
 				/>
-				<Route
-					exact
-					path="/cart"
-					component={() => <Cart cart={this.state.cart} />}
-				/>
+				<Route exact path="/cart" component={() => <Cart cart={this.state.cart} removeFromCart={this.removeFromCart} />} />
 
 				<Route
 					exact
