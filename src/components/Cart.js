@@ -5,14 +5,22 @@ class Cart extends Component {
  
     renderEachProduct = () => {
         const {cart} = this.props
-        return cart.map(product => <div class="cartProductsContainer"><CartProduct product={product}/></div>)
+        return cart.map(product => <CartProduct product={product}/>)
     }
 
     render() { 
         const {cart} = this.props
         return ( 
             <div class="cartPage">
-                { cart.length >= 1 ? this.renderEachProduct() : <div class="cartProductsContainer"><h1 class="emptyCart">.Empty cart</h1></div> }
+                { cart.length >= 1 ? 
+                <div class="cartProductsContainer">
+                    <h1 class="emptyCart">Your Cart</h1>
+                {this.renderEachProduct()}
+                </div>
+                 : 
+                <div class="cartProductsContainer">
+                    <h1 class="emptyCart">.Empty cart</h1>
+                </div> }
             </div>  
             
         );

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const CartProduct = ({product}) => {
     return (
-        <div>
+        <div class="cartItems">
             <p>{product.name}</p>
             <p>{product.price}</p>
         </div>
