@@ -223,6 +223,9 @@ margin-bottom: 2;
 }
 
 
+
+
+
 /*   ---Login---- */
 
 .loginPage{
@@ -321,6 +324,7 @@ input[type=text], input[type=password] {
   /* border-style: solid;
   border-color: #D9BB9B; */
   box-shadow: 1px 1px 40px rgba(82, 64, 64, 0.1);
+  overflow-wrap: normal;
 }
 
 .emptyCart {
@@ -329,4 +333,15 @@ input[type=text], input[type=password] {
   width: 100%;
   color: #CC7C68;
   text-align: left;
+  margin-left: 2em;
+  margin-top: 2em;
+}
+
+.cartItems {
+  padding: 12px 20px;
+  margin: 8px 10px;
+  display: inline-block;
+  display: flex;
+  border: 1px solid #D9BB9B;
+  box-sizing: border-box;
 }
