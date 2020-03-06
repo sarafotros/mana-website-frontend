@@ -16,22 +16,25 @@ class Products extends Component {
     render() { 
 
      return (
-				<div>
-					<label>
-						<strong> Filter Products By Price:</strong>
-						<select
-							value={this.props.productSortBy}
-							onChange={this.handleChange}
-						>
-							<option value="all">All</option>
-							<option value="low-to-high">Lowest to Highest</option>
-							<option value="high-to-low">Highest to Lowest</option>
-						</select>
-					</label>
-					<div class="productGrid">
-					{this.mapProducts()}
-					</div>
-				</div>
+		<div class="productsPageContainer">
+			<h1 class="productsH1">Products</h1>
+			<div class="search">
+			<label>
+				<strong> Filter Products By Price:</strong>
+				<select
+					value={this.props.productSortBy}
+					onChange={this.handleChange}
+				>
+					<option value="all">All</option>
+					<option value="low-to-high">Lowest to Highest</option>
+					<option value="high-to-low">Highest to Lowest</option>
+				</select>
+			</label>
+			</div>
+			<div class="productGrid">
+			{this.mapProducts()}
+			</div>
+		</div>
 			);
     }
 }
