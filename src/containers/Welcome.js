@@ -76,42 +76,45 @@ class Welcome extends React.Component {
 		}
 		if (productSortBy === 'low-to-high') {
 			return this.setProductSort(
-				[...this.state.products].sort((a, b) => (a.price > b.price ? 1 : -1)));
+				[...this.state.products].sort((a, b) => (a.price > b.price ? 1 : -1))
+			);
 		}
 		if (productSortBy === 'high-to-low') {
 			return this.setProductSort(
-				[...this.state.products].sort((a, b) => (a.price < b.price ? 1 : -1)));
+				[...this.state.products].sort((a, b) => (a.price < b.price ? 1 : -1))
+			);
 		}
 	};
-
 
 	sortServicesByPrice = serviceSortBy => {
 		this.setState({ sortS: serviceSortBy });
 		if (serviceSortBy === 'all') {
-			return this.setServiceSort(this.state.services)
+			return this.setServiceSort(this.state.services);
 		}
 		if (serviceSortBy === 'low-to-high') {
 			return this.setServiceSort(
-				[...this.state.services].sort((a, b) => (a.price > b.price ? 1 : -1)));
+				[...this.state.services].sort((a, b) => (a.price > b.price ? 1 : -1))
+			);
 		}
 		if (serviceSortBy === 'hight-to-low') {
 			return this.setServiceSort(
-				[...this.state.services].sort((a, b) => (a.price < b.price ? 1 : -1)));
+				[...this.state.services].sort((a, b) => (a.price < b.price ? 1 : -1))
+			);
 		}
-	}
+	};
 
 	setProductSort = products => {
 		this.setState({ sortedProducts: products });
 	};
 
-
 	///cart
 
-	addToTheCart = (prod) => {
+	addToTheCart = prod => {
 		this.setState({
-			cart: [...this.state.cart,prod]
-		})
-	}
+			cart: [...this.state.cart, prod]
+		});
+	};
+
 
 
 	setServiceSort = services => {
@@ -119,8 +122,13 @@ class Welcome extends React.Component {
 	};
 
 	render() {
-		const { users, products, services, sortedProducts, sortedServices } = this.state;
-
+		const {
+			users,
+			products,
+			services,
+			sortedProducts,
+			sortedServices
+		} = this.state;
 
 		return (
 			<div>
@@ -160,10 +168,26 @@ class Welcome extends React.Component {
 					path="/signup"
 					component={() => <SignUp logIn={this.logIn} />}
 				/>
-				<Route exact path="/cart" component={() => <Cart cart={this.state.cart} />} />
+				<Route
+					exact
+					path="/cart"
+					component={() => <Cart cart={this.state.cart} />}
+				/>
 
-				<Route exact path="/services/:id" component={(props) => <ServiceContainer {...props} /> }></Route>
-				<Route exact path="/products/:id" component={(props) => <ProductContainer {...props}  addToTheCart={this.addToTheCart}/>}></Route>
+				<Route
+					exact
+					path="/services/:id"
+					component={props => (
+						<ServiceContainer {...props} addToTheCart={this.addToTheCart} />
+					)}
+				></Route>
+				<Route
+					exact
+					path="/products/:id"
+					component={props => (
+						<ProductContainer {...props} addToTheCart={this.addToTheCart} />
+					)}
+				></Route>
 				{/* <Instagram /> */}
 				<Footer />
 			</div>
