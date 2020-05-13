@@ -25,7 +25,7 @@ class Login extends Component {
 			<div class="loginPage">
 				<div class="loginContainer">
 					<h1 class="loginH1">Login</h1>
-					<div class="loginForm">
+					<div class="loginForm productsH2">
 					<form onSubmit={this.handleSubmit}>
 						<label>Email:</label>
 						<input type="text" name="email" onChange={this.handleChange}/> <br />

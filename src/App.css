@@ -124,7 +124,7 @@ margin-bottom: 2;
  align-items: center;
  justify-content: center;
   background-repeat: no-repeat;
-  border-radius: 2px;
+  border-radius: 4px;
  
 }
 
@@ -136,8 +136,7 @@ margin-bottom: 2;
    align-items: center;
   justify-content: center;
   background-repeat: no-repeat;
-  border-radius: 2px;
- 
+  border-radius: 4px;
 }
 .btn-c{
   padding: 14px;

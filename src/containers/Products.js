@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Product from '../components/Product'
 
 class Products extends Component {
-    state = { 
+	state = { 
+		photoFile: null
      }
 
     mapProducts = () => {
@@ -11,7 +12,22 @@ class Products extends Component {
 
     handleChange = e => {
         this.props.sortProductsByPrice(e.target.value);
-    }
+	}
+
+	// handleFormChange = (e) => {
+	// 	this.setState({
+	// 		[e.target.name]: e.target.value
+	// 	});
+	// };
+	
+	// handleFile(e) {
+	//    this.setState({photoFile: e.target.files[0]})
+	// }
+	// handleSubmit = (e) => {
+	// 	e.preventDefault()
+	// 	console.log(e.target)
+	// 	};
+
 
     render() { 
 
@@ -32,7 +48,22 @@ class Products extends Component {
 							</select>
 						</label>
 					</div>
-					<div class="productGrid">{this.mapProducts()}</div>
+			 <div class="productGrid">{this.mapProducts()}</div>
+			 
+			
+				{/* <form onSubmit={this.handleSubmit}>
+					<label>Name:</label>
+						<input type="text" name="title" onChange={this.handleFormChange} /> <br />
+						<label>Price:</label>
+						<input type="text" name="price" onChange={this.handleFormChange} /> <br />
+						<label>ml:</label>
+						<input type="text" name="quantity" onChange={this.handleFormChange} /> <br />
+						<label>Category:</label>
+						<input type="text" name="category" onChange={this.handleFormChange} /> <br />
+				
+						<input type="file" onChange={this.handleFile}/>
+						<button type="submit" value="Sign In" class="button">Create</button>
+				</form> */}
 				</div>
 			);
     }

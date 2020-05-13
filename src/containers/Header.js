@@ -28,7 +28,7 @@ class Header extends React.Component {
 			</div>
 			<div class="logCart">
 				{this.logedIn()}
-				<Link to="/cart">Cart</Link>
+				<Link to="/cart">| Cart</Link>
 			</div>
 		</div>
 	);
